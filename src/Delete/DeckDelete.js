@@ -18,7 +18,7 @@ export default function DeckDelete({deckId}) {
   return (
     <div>
       <button className="btn btn-danger float-right" onClick={handleDeckDelete}>
-        Delete
+        Delete Deck
       </button>
     </div>
   )

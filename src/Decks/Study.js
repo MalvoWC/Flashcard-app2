@@ -39,21 +39,41 @@ export default function Study() {
 
  
 if (deck && deck.id && cards.length < 3) {
-        return (
-            <div>
-              
-              <h1>{deck.name}</h1>
-                <h4>Not Enough Cards.</h4>
-                <p>You need at least 3 cards to study. There are {`${cardCount}`} cards in this deck.</p>
-                <button 
-                    type="button" 
-                    className="btn btn-primary"
-                    onClick={() => history.push(`/decks/${deckId}/cards/new`)}>
-                    + Add Cards
-                </button>
-            </div>
-        )
-    }
+  return (
+      <div>
+        <nav aria-label="breadcrumb">
+          <ol className="breadcrumb">
+            <li className="breadcrumb-item">
+              <Link to="/">
+                <i className="fas fa-home"></i> Home
+              </Link>
+            </li>
+            <li className="breadcrumb-item">
+              <Link to={`/decks/${deckId}`}>{deck.name}</Link>
+            </li>
+            <li className="breadcrumb-item active" aria-current="page">
+              Study
+            </li>
+          </ol>
+        </nav>
+        <h1>
+          {deck.name}
+        </h1>
+        <h4>
+          Not Enough Cards.
+        </h4>
+        <p>
+          You need at least 3 cards to study. There are only '{`${cardCount}`}' card(s) in this deck.
+        </p>
+        <button 
+        type="button" 
+        className="btn btn-primary"
+        onClick={() => history.push(`/decks/${deckId}/cards/new`)}>
+          + Add Cards
+        </button>
+      </div>
+    )
+  }
     if(deck && deck.id)
   return (
     <div>

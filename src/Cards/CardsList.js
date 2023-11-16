@@ -3,7 +3,7 @@ import { useHistory} from "react-router-dom";
 
 
 export default function CardList({cards}) {
-const initialState = {
+  const initialState = {
     index: 0,
     text: "",
     length: 0,
@@ -12,14 +12,13 @@ const initialState = {
   };
    
    
-     const [cardInfo, setCardInfo] = useState({
+  const [cardInfo, setCardInfo] = useState({
   ...initialState,
     length:cards.length,
     text: cards[0].front
     
   });
-    const history = useHistory();
-    
+  const history = useHistory();
     // flip handler
     const filpHandler = () => {
     setCardInfo({
@@ -30,7 +29,7 @@ const initialState = {
     });
   };
  
-const nextCard = () => {
+  const nextCard = () => {
     if (cardInfo.index === cardInfo.length-1) {
       if (
         window.confirm(
@@ -58,29 +57,34 @@ const nextCard = () => {
   
   return (
     <div>
-        <h1>CardList</h1>
-        <div className="card w-75">
-            <div className="card-body">
-                <h5 className="card-title">Card {cardInfo.index + 1} of {cardInfo.length}</h5>
-                    <p className="card-text">{ cardInfo.text}</p>
-                         <button
-                    type="button"
-                    className="btn btn-secondary"
-                    onClick={filpHandler}
-                  >
-                    Flip
-                  </button>
-                        {cardInfo.next && (
-                    <button
-                      type="button"
-                      className="btn btn-primary ml-2"
-                      onClick={nextCard}
-                    >
-                      Next
-                    </button>
-                  )}
-            </div>
+      <h1>CardList</h1>
+      <div className="card w-75">
+        <div className="card-body">
+          <h5 className="card-title">
+            Card {cardInfo.index + 1} of {cardInfo.length}
+          </h5>
+
+          <p className="card-text">
+            {cardInfo.text}
+          </p>
+          <button
+          type="button"
+          className="btn btn-secondary"
+          onClick={filpHandler}
+          >
+            Flip
+          </button>
+              {cardInfo.next && (
+          <button
+          type="button"
+          className="btn btn-primary ml-2"
+          onClick={nextCard}
+          >
+            Next
+          </button>
+          )}
         </div>
+      </div>
     </div>
   )
 }

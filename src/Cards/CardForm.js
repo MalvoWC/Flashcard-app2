@@ -5,7 +5,7 @@ export default function CardForm({ deckId, changeHandler, submitHandler, card })
   return (
     <form onSubmit={submitHandler}>
       <div className="form-group">
-        <label htmlFor="Front">Front</label>
+        <label htmlFor="front">Front</label>
         <textarea
           type="textarea"
           name="front"
@@ -18,7 +18,7 @@ export default function CardForm({ deckId, changeHandler, submitHandler, card })
         />
       </div>
       <div>
-        <label htmlFor="Back">Back</label>
+        <label htmlFor="back">Back</label>
         <textarea
           type="textarea"
           name="back"

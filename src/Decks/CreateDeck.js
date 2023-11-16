@@ -47,7 +47,6 @@ export default function CreateDeck() {
           <div className="form-group">
             <label htmlFor="name">Name</label>
 
-
             <input
               type="text"
               name="name"
@@ -66,7 +65,7 @@ export default function CreateDeck() {
               id="description"
               className="form-control"
               rows="5"
-              placeholder="Breif description of the deck"
+              placeholder="Deck Description"
               onChange={changeHandler}
               value={formData.description}
             />

@@ -17,7 +17,7 @@ export default function CardDelete({cardId, deckId}) {
     return (
         <div>
         <button className="btn btn-danger float-right" onClick={handleCardDelete}>
-            Delete
+            Delete Card
         </button>
         </div>
     )
